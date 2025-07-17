@@ -24,3 +24,7 @@ async def predict_sign(file: UploadFile = File(...)):
     prediction = model_predict_sign(contents)
     return JSONResponse(content={"predicted_sign": prediction})
 
+if __name__ == "__main__":
+    import uvicorn
+    port = int(os.environ.get("PORT", 8000))  # Render will set PORT=8000
+    uvicorn.run("main:app", host="0.0.0.0", port=port)
