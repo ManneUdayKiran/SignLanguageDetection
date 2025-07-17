@@ -2,7 +2,9 @@ from fastapi import FastAPI, UploadFile, File
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 from model.predict import predict_sign as model_predict_sign
+import uvicorn
 
+import os
 app = FastAPI()
 
 # Add CORS middleware
@@ -25,6 +27,5 @@ async def predict_sign(file: UploadFile = File(...)):
     return JSONResponse(content={"predicted_sign": prediction})
 
 if __name__ == "__main__":
-    import uvicorn
     port = int(os.environ.get("PORT", 8000))  # Render will set PORT=8000
     uvicorn.run("main:app", host="0.0.0.0", port=port)
