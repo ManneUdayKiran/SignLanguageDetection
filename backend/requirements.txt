@@ -12,7 +12,7 @@ starlette==0.46.2
 typing-inspection==0.4.1
 typing_extensions==4.14.0
 uvicorn==0.35.0
-gradio==5.36.2
+gradio>=4.0.0
 gradio_client==1.10.4
 pillow
 scikit-learn
