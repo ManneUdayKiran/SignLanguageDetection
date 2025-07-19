@@ -6,6 +6,6 @@ export default defineConfig({
   server: {
     host: '0.0.0.0',
     port: process.env.PORT || 5173,
-     allowedHosts: ['https://sign-language-detection-backend.vercel.app/','http://localhost:5173/'],
+     allowedHosts: ['http://127.0.0.1:8000/predict','http://localhost:5173'],
   },
 })
